@@ -24,8 +24,11 @@ int main() {
 		vector<int> tubes(2*t);
 		for (int j = 0; j != t; ++j) {
 			in >> tubes[2*j] >> tubes[2*j+1];
+			--tubes[2*j];
+			--tubes[2*j+1];
 		}
 		n = *max_element(tubes.begin(), tubes.end());
+		++n;
 		int ans;
 		out >> ans;
 		int tx = transporters(n, tubes);
