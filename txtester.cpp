@@ -2,12 +2,11 @@
 #include <fstream>
 #include <iostream>
 #include <algorithm>
+// Include your transporters function here, or paste it into the file
 
 using namespace std;
 
 typedef vector<int> VI;
-
-// PLACE TRANSPORTERS FUNCTION HERE
 
 int main() {
 	ifstream in("transporters.in");
