@@ -5,6 +5,8 @@
 
 using namespace std;
 
+typedef vector<int> VI;
+
 // PLACE TRANSPORTERS FUNCTION HERE
 
 int main() {
