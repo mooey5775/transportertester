@@ -11,12 +11,12 @@ typedef vector<int> VI;
 int main() {
 	ifstream in("transporters.in");
 	ifstream out("transporters.out");
-	int k, fail;
+	int k, fail = 0;
 	in >> k;
 
 	cout << "Will test " << k << " cases\n";
 
-	clock_t begin = clock();
+	double secs = 0;
 	for (int i = 0; i != k; ++i) {
 		int n, t;
 		in >> t;
@@ -30,7 +30,9 @@ int main() {
 		++n;
 		int ans;
 		out >> ans;
+		clock_t begin = clock();
 		int tx = transporters(n, tubes);
+		secs += double(clock()-begin)/CLOCKS_PER_SEC;
 		if (ans == tx) cout << "Case " << i << " correct\n";
 		else {
 			cout << "Case " << i << " incorrect\n";
@@ -52,7 +54,7 @@ int main() {
 		}
 	}
 
-	if (fail == 0) cout << "All cases passed!\n" << "Took " << double(clock()-begin)/CLOCKS_PER_SEC << " seconds\n";
+	if (fail == 0) cout << "All cases passed!\n" << "Took " << secs << " seconds\n";
 	else cout << fail << " cases failed\n";
 
 	return 0;
